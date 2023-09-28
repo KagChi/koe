@@ -23,7 +23,7 @@ public abstract class OpusAudioFrameProvider implements MediaFrameProvider {
     private boolean lastProvide = false;
     private boolean lastSpeaking = false;
     private boolean speaking = false;
-    private int speakingMask = SpeakingFlags.NORMAL;
+    private int speakingMask = SpeakingFlags.PRIORITY;
 
     public OpusAudioFrameProvider(MediaConnection connection) {
         this.connection = Objects.requireNonNull(connection);

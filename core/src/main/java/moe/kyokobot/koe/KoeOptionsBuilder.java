@@ -80,6 +80,6 @@ public class KoeOptionsBuilder {
     }
 
     public KoeOptions create() {
-        return new KoeOptions(eventLoopGroup, socketChannelClass, datagramChannelClass, byteBufAllocator, gatewayVersion, framePollerFactory, highPacketPriority);
+        return new KoeOptions(eventLoopGroup, socketChannelClass, datagramChannelClass, byteBufAllocator, gatewayVersion, framePollerFactory, highPacketPriority, false);
     }
 }
