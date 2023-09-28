@@ -24,6 +24,7 @@ public class KoeOptionsBuilder {
     private GatewayVersion gatewayVersion;
     private FramePollerFactory framePollerFactory;
     private boolean highPacketPriority;
+    private boolean loadOpus;
 
     KoeOptionsBuilder() {
         boolean epoll = Epoll.isAvailable();
@@ -79,7 +80,12 @@ public class KoeOptionsBuilder {
         return this;
     }
 
+    public KoeOptionsBuilder setLoadOpusForPCMProvider(boolean loadOpus) {
+        this.loadOpus = loadOpus;
+        return this;
+    }
+
     public KoeOptions create() {
-        return new KoeOptions(eventLoopGroup, socketChannelClass, datagramChannelClass, byteBufAllocator, gatewayVersion, framePollerFactory, highPacketPriority, false);
+        return new KoeOptions(eventLoopGroup, socketChannelClass, datagramChannelClass, byteBufAllocator, gatewayVersion, framePollerFactory, highPacketPriority, loadOpus);
     }
 }
